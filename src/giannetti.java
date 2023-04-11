@@ -40,14 +40,14 @@ public class giannetti
 	static void stampaMenu()
 	{
 		// Modificare il menù secondo le proprie scelte
-		System.out.println("1 - Es n. 1* - Titolo es.minimo di array *");
+		System.out.println("\n1 - Es n. 1* - Titolo es.minimo di array *");
 		System.out.println("2 - Es n. 2* - Titolo es. parole misteriose*");
 		System.out.println("3 - Es n. 7* - Titolo es.uguali consecutivi *");
 		System.out.println("4 - Es n. 4* - Titolo es. array divisori*");
 		System.out.println("5 - Es n.5 * - Titolo es.stampa zigzag *");
 	}
 
-	// Aggiunsgere qui i metodi statici relativi agli esercizi scelti
+	// Accordino: ok! 2pt
 	static void es1() 
 	{
 		int[] a= new int [10];
@@ -73,6 +73,8 @@ public class giannetti
 		System.out.print("minore " + vMin);
 
 	}
+	
+	// Accordino: ok! 4 pt
 	static void es7() 
 	{
 		int[] a=new int[20];
@@ -93,6 +95,7 @@ public class giannetti
 		}
 	}
 
+	// Accordino: nel secondo ciclo andava un altro indice: 1pt
 	static void es2()
 	{
 		String[] a= {"ciao","bella","addio","saluto","paleari"};
@@ -104,20 +107,19 @@ public class giannetti
 				break;
 			System.out.println("inserisci una parola");
 			parola=in.nextLine();
-			for(i=0;i<5;i++)
-			{
+			for(i=0;i<5;i++) // Accordino: se usi lo stesso indice in 2 cicli si causano errori! 
+			{// In questo caso un ciclo decrementa e l'altro incrementa la i: i tentativi diventano infiniti!
 				if(parola.equals(a[i]))
 				{
 					System.out.println("hai indovinato");
-					
-					
+
+
 				}
-				
 			}
-			
 		}
-		
 	}
+	
+	// Accordino: funziona ma hai aggirato i cicli! 2 pt
 	static void es4()
 	{
 		int[] a=new int [50];
@@ -197,13 +199,15 @@ public class giannetti
 		System.out.println("\n"+"numeri divisibili per 9 "+ b[7]);
 		System.out.println("\n"+"numeri divisibili per 10 "+b[8]);
 	}
+	
+	// Accordino; un po' disordnata la stampa, ma va bene.
 	static void es5()
 	{
 		int[] a=new int [10];
 		for( int i=0;i<a.length;i++)
 		{
 			a[i]=(int) (Math.random()*11);
-			System.out.println(a[i]+" ");
+			System.out.print(a[i]+" ");
 		}
 
 		for( int i=0, j=a.length-1;i<a.length-5;i++,j--)
